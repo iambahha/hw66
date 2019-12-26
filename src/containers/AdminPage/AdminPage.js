@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import axiosApi from "../axios";
+import axiosApi from "../../axios";
 import {Button, Container, Form, FormGroup, Input, Label} from "reactstrap";
-import {PAGES} from "../constants";
+import {PAGES} from "../../constants";
 
 class AdminPage extends Component {
     state = {

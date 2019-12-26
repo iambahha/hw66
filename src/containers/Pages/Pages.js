@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
-import axiosApi from "../axios";
+import axiosApi from "../../axios";
 import {Container} from "reactstrap";
 
 class Pages extends Component {
 
     state = {
+        content: '',
         title: '',
-        content: ''
     };
 
     async getInfo() {
-        const page = this.props.match.params.name;
-        const response = await axiosApi.get('/pages/' + page + '.json');
+        const thisPage = this.props.match.params.name;
+        const response = await axiosApi.get('/pages/' + thisPage + '.json');
         if (response.data) {
             this.setState({title: response.data.title, content: response.data.content});
         }
@@ -30,8 +30,8 @@ class Pages extends Component {
     render() {
         return (
             <Container>
-                <h2>{this.state.title}</h2>
-                <p>{this.state.content}</p>
+                <h1>{this.state.title}</h1>
+                <h4>{this.state.content}</h4>
             </Container>
         );
     }
