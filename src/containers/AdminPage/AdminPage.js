@@ -28,8 +28,8 @@ class AdminPage extends Component {
         e.preventDefault();
 
         const editedInfo = {
-            title: this.state.title,
             content: this.state.content,
+            title: this.state.title,
         };
         this.setState({title: '', content: ''});
 
@@ -76,7 +76,7 @@ class AdminPage extends Component {
                                value={this.state.content}
                                onChange={this.inputChangeHandler}/>
                     </FormGroup>
-                    <Button color="info">Save</Button>{' '}
+                    <Button color="info">Save</Button>
                 </Form>
             </Container>
 
