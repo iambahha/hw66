@@ -9,7 +9,7 @@ class Pages extends Component {
         title: '',
     };
 
-    async getInfo() {
+    async getThisInfo() {
         const thisPage = this.props.match.params.name;
         const response = await axiosApi.get('/pages/' + thisPage + '.json');
         if (response.data) {
@@ -18,12 +18,12 @@ class Pages extends Component {
     }
 
     async componentDidMount() {
-        this.getInfo();
+        this.getThisInfo();
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.name !== this.props.match.params.name) {
-            return this.getInfo();
+            return this.getThisInfo();
         }
     }
 
