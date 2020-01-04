@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axiosApi from "../../axios";
 import {PAGES} from "../../constants";
 import {Button, Container, Form, FormGroup, Input, Label} from "reactstrap";
+import withLoader from "../../hoc/withLoader/withLoader";
 
 class AdminPage extends Component {
     state = {
@@ -85,4 +86,4 @@ class AdminPage extends Component {
     }
 }
 
-export default AdminPage;
+export default withLoader(AdminPage, axiosApi);

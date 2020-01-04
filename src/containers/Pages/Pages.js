@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axiosApi from "../../axios";
 import {Container} from "reactstrap";
+import withLoader from "../../hoc/withLoader/withLoader";
 
 class Pages extends Component {
 
@@ -37,4 +38,4 @@ class Pages extends Component {
     }
 }
 
-export default Pages;
+export default withLoader(Pages, axiosApi);

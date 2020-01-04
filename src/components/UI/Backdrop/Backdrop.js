@@ -1,8 +1,14 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import './Backdrop.css';
+import Spinner from "../Spinner/Spinner";
 
-const Backdrop = props => (
-  props.show ? <div className="Backdrop" onClick={props.onClick} /> : null
-);
+const Backdrop = ({onClick, show}) => {
+	return (
+		show ? <Fragment>
+			<div className='Backdrop' onClick={onClick}/>
+			<Spinner />
+		</Fragment> : null
+	);
+};
 
 export default Backdrop;
